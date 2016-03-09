@@ -19,6 +19,12 @@
 		0A10A91B1C901BED0009CC8D /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91A1C901BED0009CC8D /* AlarmController.swift */; };
 		0A10A91D1C901C380009CC8D /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91C1C901C380009CC8D /* NoteController.swift */; };
 		0A10A91F1C901C850009CC8D /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91E1C901C850009CC8D /* AccountController.swift */; };
+		0A10A9271C901EB90009CC8D /* patient_cards-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9221C901EB90009CC8D /* patient_cards-512.png */; };
+		0A10A9281C901EB90009CC8D /* edit-notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9231C901EB90009CC8D /* edit-notes.png */; };
+		0A10A9291C901EB90009CC8D /* Times and Dates.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9241C901EB90009CC8D /* Times and Dates.png */; };
+		0A10A92A1C901EB90009CC8D /* calen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9251C901EB90009CC8D /* calen.png */; };
+		0A10A92B1C901EB90009CC8D /* Todo-Checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9261C901EB90009CC8D /* Todo-Checklist.png */; };
+		0A10A92D1C902A550009CC8D /* MB__home.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A92C1C902A550009CC8D /* MB__home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		0A10A91A1C901BED0009CC8D /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		0A10A91C1C901C380009CC8D /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		0A10A91E1C901C850009CC8D /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		0A10A9221C901EB90009CC8D /* patient_cards-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "patient_cards-512.png"; sourceTree = "<group>"; };
+		0A10A9231C901EB90009CC8D /* edit-notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-notes.png"; sourceTree = "<group>"; };
+		0A10A9241C901EB90009CC8D /* Times and Dates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Times and Dates.png"; sourceTree = "<group>"; };
+		0A10A9251C901EB90009CC8D /* calen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calen.png; sourceTree = "<group>"; };
+		0A10A9261C901EB90009CC8D /* Todo-Checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Todo-Checklist.png"; sourceTree = "<group>"; };
+		0A10A92C1C902A550009CC8D /* MB__home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MB__home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				0A10A8E71C9014090009CC8D /* AppDelegate.swift */,
+				0A10A9211C901EA20009CC8D /* Images */,
 				0A10A9201C901CB00009CC8D /* Controllers */,
 				0A10A8EB1C9014090009CC8D /* Main.storyboard */,
 				0A10A8EE1C9014090009CC8D /* Assets.xcassets */,
@@ -146,6 +159,19 @@
 				0A10A9151C901A770009CC8D /* AgendaController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0A10A9211C901EA20009CC8D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A92C1C902A550009CC8D /* MB__home.png */,
+				0A10A9221C901EB90009CC8D /* patient_cards-512.png */,
+				0A10A9231C901EB90009CC8D /* edit-notes.png */,
+				0A10A9241C901EB90009CC8D /* Times and Dates.png */,
+				0A10A9251C901EB90009CC8D /* calen.png */,
+				0A10A9261C901EB90009CC8D /* Todo-Checklist.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +278,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A10A9281C901EB90009CC8D /* edit-notes.png in Resources */,
 				0A10A8F21C9014090009CC8D /* LaunchScreen.storyboard in Resources */,
+				0A10A92B1C901EB90009CC8D /* Todo-Checklist.png in Resources */,
 				0A10A8EF1C9014090009CC8D /* Assets.xcassets in Resources */,
+				0A10A9271C901EB90009CC8D /* patient_cards-512.png in Resources */,
+				0A10A92A1C901EB90009CC8D /* calen.png in Resources */,
+				0A10A9291C901EB90009CC8D /* Times and Dates.png in Resources */,
 				0A10A8ED1C9014090009CC8D /* Main.storyboard in Resources */,
+				0A10A92D1C902A550009CC8D /* MB__home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,35 +14,115 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8Z-4H-KHp">
+                                <rect key="frame" x="227" y="146" width="73" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="p1g-dj-Qia"/>
+                                    <constraint firstAttribute="width" constant="73" id="tXi-bb-ugQ"/>
+                                </constraints>
+                                <state key="normal" title="Alarm" image="Times and Dates.png"/>
+                                <connections>
+                                    <segue destination="Rrl-0M-clY" kind="modal" id="MSN-ZO-3hY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-2U-ztW">
+                                <rect key="frame" x="20" y="146" width="69" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="QqF-8J-PBN"/>
+                                    <constraint firstAttribute="width" constant="69" id="deW-7T-YIZ"/>
+                                </constraints>
+                                <state key="normal" title="Notes" image="edit-notes.png"/>
+                                <connections>
+                                    <segue destination="9Wf-Pj-RN0" kind="modal" id="khI-gb-lH7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-fl-Bks">
+                                <rect key="frame" x="229" y="256" width="68" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="NzA-KI-vRr"/>
+                                    <constraint firstAttribute="height" constant="58" id="bVe-Ur-Siq"/>
+                                </constraints>
+                                <state key="normal" title="To Do List" image="Todo-Checklist.png"/>
+                                <connections>
+                                    <segue destination="5y9-Ij-H3C" kind="modal" id="yac-0n-4c8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-c9-927">
+                                <rect key="frame" x="20" y="256" width="69" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Dr3-M2-ROp"/>
+                                    <constraint firstAttribute="width" constant="69" id="jTf-F4-Kjk"/>
+                                </constraints>
+                                <state key="normal" title="Calender" image="calen.png"/>
+                                <connections>
+                                    <segue destination="Q88-bt-0j1" kind="modal" id="uQd-Qo-ic1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8i-8C-b9O">
+                                <rect key="frame" x="20" y="28" width="65" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="dCz-FK-Xnd"/>
+                                    <constraint firstAttribute="height" constant="59" id="lVi-ro-PmF"/>
+                                </constraints>
+                                <state key="normal" title="Account" image="patient_cards-512.png"/>
+                                <connections>
+                                    <segue destination="Md1-PE-Nfa" kind="modal" id="5jM-El-6Hl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UPf-c9-927" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="Exd-1n-F2C"/>
+                            <constraint firstItem="GFC-fl-Bks" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="HWc-A0-YJJ"/>
+                            <constraint firstItem="p8i-8C-b9O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-226.5" id="HYg-9J-HYZ"/>
+                            <constraint firstItem="p8i-8C-b9O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-107.5" id="Mgh-ny-aq5"/>
+                            <constraint firstItem="Rae-2U-ztW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-105.5" id="UWs-gz-oi9"/>
+                            <constraint firstItem="O8Z-4H-KHp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="103.5" id="eIE-cA-zPv"/>
+                            <constraint firstItem="GFC-fl-Bks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="103" id="lFC-km-77c"/>
+                            <constraint firstItem="Rae-2U-ztW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-109.5" id="pF7-tA-OB4"/>
+                            <constraint firstItem="O8Z-4H-KHp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-106" id="riW-6O-nLy"/>
+                            <constraint firstItem="UPf-c9-927" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-105.5" id="v8m-kx-xbP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zwS-PW-k5F"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="233" y="308"/>
         </scene>
         <!--To Do List-->
         <scene sceneID="lr9-kk-plZ">
             <objects>
-                <viewController title="To Do List" id="5y9-Ij-H3C" customClass="ToDoListController" sceneMemberID="viewController">
+                <viewController title="To Do List" id="5y9-Ij-H3C" customClass="ToDoListController" customModule="IOS_Planner" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D9f-m0-2El"/>
                         <viewControllerLayoutGuide type="bottom" id="JED-D3-N6L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mpO-6E-rBz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-k2-67V">
+                                <rect key="frame" x="20" y="20" width="55" height="39"/>
+                                <state key="normal" title="Button" image="MB__home.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="tZH-pO-aHR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzf-Nt-Me2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432.5" y="765.5"/>
+            <point key="canvasLocation" x="756" y="697"/>
         </scene>
         <!--Account-->
         <scene sceneID="fVU-du-lcd">
@@ -53,16 +133,25 @@
                         <viewControllerLayoutGuide type="bottom" id="gMQ-XA-cx9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0zD-WX-qKT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIZ-Lv-7H9">
+                                <rect key="frame" x="20" y="20" width="57" height="40"/>
+                                <state key="normal" title="Button" image="MB__home.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="SNh-fV-QFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ca-tr-GJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="909"/>
+            <point key="canvasLocation" x="304" y="-705"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="HvH-hO-hxN">
@@ -73,16 +162,25 @@
                         <viewControllerLayoutGuide type="bottom" id="Hlw-pv-EyA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mUg-XF-Hvx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-c5-BSN">
+                                <rect key="frame" x="20" y="20" width="55" height="39"/>
+                                <state key="normal" title="Button" image="MB__home.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="VRJ-OI-ib7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gs-k1-22Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244.5" y="1221.5"/>
+            <point key="canvasLocation" x="772" y="49"/>
         </scene>
         <!--Notes-->
         <scene sceneID="C8E-g6-Gma">
@@ -93,16 +191,25 @@
                         <viewControllerLayoutGuide type="bottom" id="JzX-Eb-Qhf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BJi-vF-JJd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gol-Cb-tId">
+                                <rect key="frame" x="20" y="20" width="55" height="39"/>
+                                <state key="normal" title="Button" image="MB__home.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="sYV-69-elq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s8-4U-AXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="-534"/>
+            <point key="canvasLocation" x="-203" y="-122"/>
         </scene>
         <!--Agenda-->
         <scene sceneID="iHF-tT-Xae">
@@ -113,16 +220,36 @@
                         <viewControllerLayoutGuide type="bottom" id="eVg-lM-Av0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="149-7d-b1U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TN1-aG-KrY">
+                                <rect key="frame" x="20" y="20" width="55" height="39"/>
+                                <state key="normal" title="Button" image="MB__home.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="modal" id="wBZ-Tf-M1h"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSG-mr-s3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910.5" y="-99.5"/>
+            <point key="canvasLocation" x="-194" y="844"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MB__home.png" width="128" height="128"/>
+        <image name="Times and Dates.png" width="512" height="512"/>
+        <image name="Todo-Checklist.png" width="300" height="300"/>
+        <image name="calen.png" width="517" height="475"/>
+        <image name="edit-notes.png" width="256" height="256"/>
+        <image name="patient_cards-512.png" width="512" height="512"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SNh-fV-QFo"/>
+    </inferredMetricsTieBreakers>
 </document>
