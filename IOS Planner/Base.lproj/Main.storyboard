@@ -27,7 +27,7 @@
         <!--To Do List-->
         <scene sceneID="lr9-kk-plZ">
             <objects>
-                <viewController title="To Do List" id="5y9-Ij-H3C" sceneMemberID="viewController">
+                <viewController title="To Do List" id="5y9-Ij-H3C" customClass="ToDoListController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D9f-m0-2El"/>
                         <viewControllerLayoutGuide type="bottom" id="JED-D3-N6L"/>
@@ -42,12 +42,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzf-Nt-Me2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.5" y="883.5"/>
+            <point key="canvasLocation" x="1432.5" y="765.5"/>
         </scene>
         <!--Account-->
         <scene sceneID="fVU-du-lcd">
             <objects>
-                <viewController title="Account" id="Md1-PE-Nfa" sceneMemberID="viewController">
+                <viewController title="Account" id="Md1-PE-Nfa" customClass="AccountController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aeO-jK-FRD"/>
                         <viewControllerLayoutGuide type="bottom" id="gMQ-XA-cx9"/>
@@ -67,7 +67,7 @@
         <!--Alarm-->
         <scene sceneID="HvH-hO-hxN">
             <objects>
-                <viewController title="Alarm" id="Rrl-0M-clY" sceneMemberID="viewController">
+                <viewController title="Alarm" id="Rrl-0M-clY" customClass="AlarmController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u7y-e3-1Ne"/>
                         <viewControllerLayoutGuide type="bottom" id="Hlw-pv-EyA"/>
@@ -87,7 +87,7 @@
         <!--Notes-->
         <scene sceneID="C8E-g6-Gma">
             <objects>
-                <viewController title="Notes" id="9Wf-Pj-RN0" sceneMemberID="viewController">
+                <viewController title="Notes" id="9Wf-Pj-RN0" customClass="NoteController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g42-AW-sk8"/>
                         <viewControllerLayoutGuide type="bottom" id="JzX-Eb-Qhf"/>
@@ -107,7 +107,7 @@
         <!--Agenda-->
         <scene sceneID="iHF-tT-Xae">
             <objects>
-                <viewController title="Agenda" id="Q88-bt-0j1" sceneMemberID="viewController">
+                <viewController title="Agenda" id="Q88-bt-0j1" customClass="AgendaController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SsJ-0a-Efu"/>
                         <viewControllerLayoutGuide type="bottom" id="eVg-lM-Av0"/>
