@@ -15,7 +15,6 @@
 		0A10A8FD1C90140A0009CC8D /* IOS_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A8FC1C90140A0009CC8D /* IOS_PlannerTests.swift */; };
 		0A10A9081C90140A0009CC8D /* IOS_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9071C90140A0009CC8D /* IOS_PlannerUITests.swift */; };
 		0A10A9161C901A770009CC8D /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9151C901A770009CC8D /* AgendaController.swift */; };
-		0A10A9181C901B6D0009CC8D /* ToDoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9171C901B6D0009CC8D /* ToDoListController.swift */; };
 		0A10A91B1C901BED0009CC8D /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91A1C901BED0009CC8D /* AlarmController.swift */; };
 		0A10A91D1C901C380009CC8D /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91C1C901C380009CC8D /* NoteController.swift */; };
 		0A10A91F1C901C850009CC8D /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A91E1C901C850009CC8D /* AccountController.swift */; };
@@ -25,6 +24,9 @@
 		0A10A92A1C901EB90009CC8D /* calen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9251C901EB90009CC8D /* calen.png */; };
 		0A10A92B1C901EB90009CC8D /* Todo-Checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9261C901EB90009CC8D /* Todo-Checklist.png */; };
 		0A10A92D1C902A550009CC8D /* MB__home.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A92C1C902A550009CC8D /* MB__home.png */; };
+		0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */; };
+		0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */; };
+		0A10A9391C90A66F0009CC8D /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,6 @@
 		0A10A9071C90140A0009CC8D /* IOS_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_PlannerUITests.swift; sourceTree = "<group>"; };
 		0A10A9091C90140A0009CC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A10A9151C901A770009CC8D /* AgendaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaController.swift; sourceTree = "<group>"; };
-		0A10A9171C901B6D0009CC8D /* ToDoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListController.swift; sourceTree = "<group>"; };
 		0A10A91A1C901BED0009CC8D /* AlarmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		0A10A91C1C901C380009CC8D /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		0A10A91E1C901C850009CC8D /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
@@ -69,6 +70,9 @@
 		0A10A9251C901EB90009CC8D /* calen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calen.png; sourceTree = "<group>"; };
 		0A10A9261C901EB90009CC8D /* Todo-Checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Todo-Checklist.png"; sourceTree = "<group>"; };
 		0A10A92C1C902A550009CC8D /* MB__home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MB__home.png; sourceTree = "<group>"; };
+		0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
+		0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAddViewController.swift; sourceTree = "<group>"; };
+		0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,12 +155,14 @@
 		0A10A9201C901CB00009CC8D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */,
 				0A10A8E91C9014090009CC8D /* ViewController.swift */,
 				0A10A91A1C901BED0009CC8D /* AlarmController.swift */,
 				0A10A91C1C901C380009CC8D /* NoteController.swift */,
 				0A10A91E1C901C850009CC8D /* AccountController.swift */,
-				0A10A9171C901B6D0009CC8D /* ToDoListController.swift */,
 				0A10A9151C901A770009CC8D /* AgendaController.swift */,
+				0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */,
+				0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -312,11 +318,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A10A91F1C901C850009CC8D /* AccountController.swift in Sources */,
+				0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */,
 				0A10A8EA1C9014090009CC8D /* ViewController.swift in Sources */,
 				0A10A91D1C901C380009CC8D /* NoteController.swift in Sources */,
+				0A10A9391C90A66F0009CC8D /* TaskDetailsViewController.swift in Sources */,
 				0A10A91B1C901BED0009CC8D /* AlarmController.swift in Sources */,
-				0A10A9181C901B6D0009CC8D /* ToDoListController.swift in Sources */,
 				0A10A8E81C9014090009CC8D /* AppDelegate.swift in Sources */,
+				0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */,
 				0A10A9161C901A770009CC8D /* AgendaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
