@@ -10,9 +10,12 @@ import UIKit
 
 class TaskAddViewController: UIViewController {
 
+    @IBOutlet var TaskAddTitelText: UITextField!
+    @IBOutlet var TaskAddNotesText: UITextView!
+    var taskItem = Task(titel: "", notes: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +23,15 @@ class TaskAddViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func addTaskButton(sender: AnyObject) {
+        if(TaskAddTitelText.text != "" && TaskAddNotesText.text != "")
+        {
+        taskItem = Task(titel: TaskAddTitelText.text!, notes: TaskAddNotesText.text!)
+        }
+    }
+    
+ 
     
 
     /*

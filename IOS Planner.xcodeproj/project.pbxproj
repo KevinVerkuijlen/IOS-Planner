@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A06C2681C91DE1400148286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A06C2661C91DE1400148286 /* Main.storyboard */; };
 		0A10A8E81C9014090009CC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A8E71C9014090009CC8D /* AppDelegate.swift */; };
-		0A10A8EA1C9014090009CC8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A8E91C9014090009CC8D /* ViewController.swift */; };
-		0A10A8ED1C9014090009CC8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A8EB1C9014090009CC8D /* Main.storyboard */; };
+		0A10A8EA1C9014090009CC8D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A8E91C9014090009CC8D /* HomeController.swift */; };
 		0A10A8EF1C9014090009CC8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A8EE1C9014090009CC8D /* Assets.xcassets */; };
 		0A10A8F21C9014090009CC8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A8F01C9014090009CC8D /* LaunchScreen.storyboard */; };
 		0A10A8FD1C90140A0009CC8D /* IOS_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A8FC1C90140A0009CC8D /* IOS_PlannerTests.swift */; };
@@ -27,6 +27,11 @@
 		0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */; };
 		0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */; };
 		0A10A9391C90A66F0009CC8D /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */; };
+		0A10A93B1C90BCC80009CC8D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A93A1C90BCC80009CC8D /* Task.swift */; };
+		0AA0B90A1C936975001047B0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0B9091C936975001047B0 /* Account.swift */; };
+		0AA0B90D1C936A7D001047B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0B90C1C936A7D001047B0 /* Alarm.swift */; };
+		0AA0B90F1C9371AD001047B0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0B90E1C9371AD001047B0 /* Note.swift */; };
+		0AA0B9131C937221001047B0 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0B9121C937221001047B0 /* CalendarEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A06C2671C91DE1400148286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A10A8E41C9014090009CC8D /* IOS Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A10A8E71C9014090009CC8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0A10A8E91C9014090009CC8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A10A8EC1C9014090009CC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0A10A8E71C9014090009CC8D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A10A8E91C9014090009CC8D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		0A10A8EE1C9014090009CC8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A10A8F11C9014090009CC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A10A8F31C9014090009CC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +78,11 @@
 		0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAddViewController.swift; sourceTree = "<group>"; };
 		0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		0A10A93A1C90BCC80009CC8D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0AA0B9091C936975001047B0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0AA0B90C1C936A7D001047B0 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		0AA0B90E1C9371AD001047B0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		0AA0B9121C937221001047B0 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +134,14 @@
 			isa = PBXGroup;
 			children = (
 				0A10A8E71C9014090009CC8D /* AppDelegate.swift */,
+				0A10A8E91C9014090009CC8D /* HomeController.swift */,
+				0AA0B9071C9366E8001047B0 /* AccountSystem */,
+				0AA0B9031C936690001047B0 /* TaskSystem */,
+				0AA0B9051C9366D2001047B0 /* AlarmSystem */,
+				0AA0B9061C9366E0001047B0 /* NoteSystem */,
+				0AA0B9081C9366F4001047B0 /* AgendaSystem */,
 				0A10A9211C901EA20009CC8D /* Images */,
-				0A10A9201C901CB00009CC8D /* Controllers */,
-				0A10A8EB1C9014090009CC8D /* Main.storyboard */,
+				0A06C2661C91DE1400148286 /* Main.storyboard */,
 				0A10A8EE1C9014090009CC8D /* Assets.xcassets */,
 				0A10A8F01C9014090009CC8D /* LaunchScreen.storyboard */,
 				0A10A8F31C9014090009CC8D /* Info.plist */,
@@ -152,21 +167,6 @@
 			path = "IOS PlannerUITests";
 			sourceTree = "<group>";
 		};
-		0A10A9201C901CB00009CC8D /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */,
-				0A10A8E91C9014090009CC8D /* ViewController.swift */,
-				0A10A91A1C901BED0009CC8D /* AlarmController.swift */,
-				0A10A91C1C901C380009CC8D /* NoteController.swift */,
-				0A10A91E1C901C850009CC8D /* AccountController.swift */,
-				0A10A9151C901A770009CC8D /* AgendaController.swift */,
-				0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */,
-				0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
 		0A10A9211C901EA20009CC8D /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +178,93 @@
 				0A10A9261C901EB90009CC8D /* Todo-Checklist.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		0AA0B9031C936690001047B0 /* TaskSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A93A1C90BCC80009CC8D /* Task.swift */,
+				0AA0B9041C9366A2001047B0 /* TaskControllers */,
+			);
+			name = TaskSystem;
+			sourceTree = "<group>";
+		};
+		0AA0B9041C9366A2001047B0 /* TaskControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */,
+				0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */,
+				0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */,
+			);
+			name = TaskControllers;
+			sourceTree = "<group>";
+		};
+		0AA0B9051C9366D2001047B0 /* AlarmSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0AA0B9101C937202001047B0 /* AlarmController */,
+				0AA0B90C1C936A7D001047B0 /* Alarm.swift */,
+			);
+			name = AlarmSystem;
+			sourceTree = "<group>";
+		};
+		0AA0B9061C9366E0001047B0 /* NoteSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0AA0B9111C93720D001047B0 /* NoteController */,
+				0AA0B90E1C9371AD001047B0 /* Note.swift */,
+			);
+			name = NoteSystem;
+			sourceTree = "<group>";
+		};
+		0AA0B9071C9366E8001047B0 /* AccountSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0AA0B90B1C936A54001047B0 /* AccountController */,
+				0AA0B9091C936975001047B0 /* Account.swift */,
+			);
+			name = AccountSystem;
+			sourceTree = "<group>";
+		};
+		0AA0B9081C9366F4001047B0 /* AgendaSystem */ = {
+			isa = PBXGroup;
+			children = (
+				0AA0B9141C937227001047B0 /* AgendaController */,
+				0AA0B9121C937221001047B0 /* CalendarEvent.swift */,
+			);
+			name = AgendaSystem;
+			sourceTree = "<group>";
+		};
+		0AA0B90B1C936A54001047B0 /* AccountController */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A91E1C901C850009CC8D /* AccountController.swift */,
+			);
+			name = AccountController;
+			sourceTree = "<group>";
+		};
+		0AA0B9101C937202001047B0 /* AlarmController */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A91A1C901BED0009CC8D /* AlarmController.swift */,
+			);
+			name = AlarmController;
+			sourceTree = "<group>";
+		};
+		0AA0B9111C93720D001047B0 /* NoteController */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A91C1C901C380009CC8D /* NoteController.swift */,
+			);
+			name = NoteController;
+			sourceTree = "<group>";
+		};
+		0AA0B9141C937227001047B0 /* AgendaController */ = {
+			isa = PBXGroup;
+			children = (
+				0A10A9151C901A770009CC8D /* AgendaController.swift */,
+			);
+			name = AgendaController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +377,8 @@
 				0A10A8EF1C9014090009CC8D /* Assets.xcassets in Resources */,
 				0A10A9271C901EB90009CC8D /* patient_cards-512.png in Resources */,
 				0A10A92A1C901EB90009CC8D /* calen.png in Resources */,
+				0A06C2681C91DE1400148286 /* Main.storyboard in Resources */,
 				0A10A9291C901EB90009CC8D /* Times and Dates.png in Resources */,
-				0A10A8ED1C9014090009CC8D /* Main.storyboard in Resources */,
 				0A10A92D1C902A550009CC8D /* MB__home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,14 +405,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A10A91F1C901C850009CC8D /* AccountController.swift in Sources */,
+				0AA0B90A1C936975001047B0 /* Account.swift in Sources */,
 				0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */,
-				0A10A8EA1C9014090009CC8D /* ViewController.swift in Sources */,
+				0A10A93B1C90BCC80009CC8D /* Task.swift in Sources */,
+				0A10A8EA1C9014090009CC8D /* HomeController.swift in Sources */,
+				0AA0B90F1C9371AD001047B0 /* Note.swift in Sources */,
+				0AA0B9131C937221001047B0 /* CalendarEvent.swift in Sources */,
 				0A10A91D1C901C380009CC8D /* NoteController.swift in Sources */,
 				0A10A9391C90A66F0009CC8D /* TaskDetailsViewController.swift in Sources */,
 				0A10A91B1C901BED0009CC8D /* AlarmController.swift in Sources */,
 				0A10A8E81C9014090009CC8D /* AppDelegate.swift in Sources */,
 				0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */,
 				0A10A9161C901A770009CC8D /* AgendaController.swift in Sources */,
+				0AA0B90D1C936A7D001047B0 /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +453,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A10A8EB1C9014090009CC8D /* Main.storyboard */ = {
+		0A06C2661C91DE1400148286 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0A10A8EC1C9014090009CC8D /* Base */,
+				0A06C2671C91DE1400148286 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -550,6 +642,7 @@
 				0A10A90E1C90140A0009CC8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A10A90F1C90140A0009CC8D /* Build configuration list for PBXNativeTarget "IOS PlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +651,7 @@
 				0A10A9111C90140A0009CC8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A10A9121C90140A0009CC8D /* Build configuration list for PBXNativeTarget "IOS PlannerUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +660,7 @@
 				0A10A9141C90140A0009CC8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
