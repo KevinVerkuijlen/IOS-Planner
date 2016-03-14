@@ -9,18 +9,16 @@
 import Foundation
 
 class Note {
-    let information: String
-    let accountEmail: String
+    var information: String?
+    var accountEmail: String?
     
-    init(Information: String, AccountEmail: String){
-        self.information = Information
-        self.accountEmail = AccountEmail
-        
+    init(information: String){
+        self.information = information
     }
     
-    convenience init(Information: String){
-        self.init(Information:Information)
+    init(information: String, accountemail:String){
+        self.information = information
+        self.accountEmail = accountemail
     }
-    
     
 }

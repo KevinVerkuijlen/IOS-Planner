@@ -1,21 +1,22 @@
 //
-//  TaskAddViewController.swift
+//  NoteDetailViewController.swift
 //  IOS Planner
 //
-//  Created by Kevin Verkuijlen on 09-03-16.
+//  Created by Kevin Verkuijlen on 14-03-16.
 //  Copyright © 2016 Kevin Verkuijlen. All rights reserved.
 //
 
 import UIKit
 
-class TaskAddViewController: UIViewController {
+class NoteDetailViewController: UIViewController {
 
-    @IBOutlet var TaskAddTitelText: UITextField!
-    @IBOutlet var TaskAddNotesText: UITextView!
-    var taskItem = Task(Titel: "", Notes: "")
+    var note: Note?
+    
+    @IBOutlet var NoteDetailTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NoteDetailTextView.text = note?.information
         // Do any additional setup after loading the view.
     }
 
@@ -23,15 +24,6 @@ class TaskAddViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func addTaskButton(sender: AnyObject) {
-        if(TaskAddTitelText.text != "" && TaskAddNotesText.text != "")
-        {
-        taskItem = Task(Titel: TaskAddTitelText.text!, Notes: TaskAddNotesText.text!)
-        }
-    }
-    
- 
     
 
     /*
