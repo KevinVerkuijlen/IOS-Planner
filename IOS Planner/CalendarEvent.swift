@@ -9,11 +9,18 @@
 import Foundation
 
 class CalendarEvent {
-    let titel: String
-    let notes: String
-    let startDate: NSData
-    let endDate: NSData
-    let accountEmail: String
+    var titel: String
+    var notes: String
+    var startDate: NSData
+    var endDate: NSData
+    var accountEmail: String?
+    
+    init(Titel: String, Notes: String, StartDate: NSData, EndDate: NSData){
+        self.titel = Titel
+        self.notes = Notes
+        self.startDate = StartDate
+        self.endDate = EndDate
+    }
     
     init(Titel: String, Notes: String, StartDate: NSData, EndDate: NSData, AccountEmail: String){
         self.titel = Titel
@@ -22,10 +29,6 @@ class CalendarEvent {
         self.endDate = EndDate
         self.accountEmail = AccountEmail
         
-    }
-    
-    convenience init(Titel: String, Notes: String, StartDate: NSData, EndDate: NSData){
-        self.init(Titel:Titel, Notes:Notes, StartDate:StartDate, EndDate:EndDate)
     }
     
     

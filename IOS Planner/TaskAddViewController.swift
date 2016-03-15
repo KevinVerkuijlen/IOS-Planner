@@ -10,9 +10,11 @@ import UIKit
 
 class TaskAddViewController: UIViewController {
 
+    var newTask = Task(Titel: "", Notes: "")
+    
     @IBOutlet var TaskAddTitelText: UITextField!
     @IBOutlet var TaskAddNotesText: UITextView!
-    var taskItem = Task(Titel: "", Notes: "")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,21 @@ class TaskAddViewController: UIViewController {
     @IBAction func addTaskButton(sender: AnyObject) {
         if(TaskAddTitelText.text != "" && TaskAddNotesText.text != "")
         {
-        taskItem = Task(Titel: TaskAddTitelText.text!, Notes: TaskAddNotesText.text!)
+            self.performSegueWithIdentifier("NewTaskToTask", sender: self)
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(TaskAddTitelText.text != nil && TaskAddNotesText.text != nil)
+        {
+            newTask = Task(Titel: TaskAddTitelText.text!, Notes: TaskAddNotesText.text!)
+            if segue.identifier == "NewTaskToTask" {
+                if let destination = segue.destinationViewController as? TaskController{
+                    destination.taskAdministration.AddTask(newTask)
+                }
+            }
+        }
+    }
  
     
 

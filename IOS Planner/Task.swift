@@ -9,11 +9,16 @@
 import Foundation
 
 class Task {
-    let titel: String
-    let notes: String
-    var completed: Bool
-    let accountEmail: String
+    var titel: String!
+    var notes: String!
+    var completed: Bool!
+    var accountEmail: String?
 
+    init(Titel: String, Notes: String, Completed: Bool = false){
+        self.titel = Titel
+        self.notes = Notes
+        self.completed = Completed        
+    }
     
     init(Titel: String, Notes: String, Completed: Bool = false, AccountEmail: String){
         self.titel = Titel
@@ -21,10 +26,6 @@ class Task {
         self.completed = Completed
         self.accountEmail = AccountEmail
 
-    }
-    
-    convenience init(Titel: String, Notes: String){
-        self.init(Titel:Titel, Notes:Notes)
     }
     
 

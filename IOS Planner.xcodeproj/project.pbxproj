@@ -24,7 +24,6 @@
 		0A10A92A1C901EB90009CC8D /* calen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9251C901EB90009CC8D /* calen.png */; };
 		0A10A92B1C901EB90009CC8D /* Todo-Checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A9261C901EB90009CC8D /* Todo-Checklist.png */; };
 		0A10A92D1C902A550009CC8D /* MB__home.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A10A92C1C902A550009CC8D /* MB__home.png */; };
-		0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */; };
 		0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */; };
 		0A10A9391C90A66F0009CC8D /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */; };
 		0A10A93B1C90BCC80009CC8D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10A93A1C90BCC80009CC8D /* Task.swift */; };
@@ -42,6 +41,7 @@
 		0AD48F901C96A0F10092F8D7 /* NormalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD48F8F1C96A0F10092F8D7 /* NormalEvent.swift */; };
 		0AD48F921C96B1EC0092F8D7 /* NoteAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD48F911C96B1EC0092F8D7 /* NoteAddViewController.swift */; };
 		0AD48F941C96D6860092F8D7 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD48F931C96D6860092F8D7 /* NoteDetailViewController.swift */; };
+		0AD48F961C98134F0092F8D7 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD48F951C98134F0092F8D7 /* TaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,6 @@
 		0A10A9251C901EB90009CC8D /* calen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calen.png; sourceTree = "<group>"; };
 		0A10A9261C901EB90009CC8D /* Todo-Checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Todo-Checklist.png"; sourceTree = "<group>"; };
 		0A10A92C1C902A550009CC8D /* MB__home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MB__home.png; sourceTree = "<group>"; };
-		0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskAddViewController.swift; sourceTree = "<group>"; };
 		0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		0A10A93A1C90BCC80009CC8D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		0AD48F8F1C96A0F10092F8D7 /* NormalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalEvent.swift; sourceTree = "<group>"; };
 		0AD48F911C96B1EC0092F8D7 /* NoteAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteAddViewController.swift; sourceTree = "<group>"; };
 		0AD48F931C96D6860092F8D7 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		0AD48F951C98134F0092F8D7 /* TaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +213,7 @@
 		0AA0B9041C9366A2001047B0 /* TaskControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A10A9341C90A5B20009CC8D /* TaskTableViewController.swift */,
+				0AD48F951C98134F0092F8D7 /* TaskController.swift */,
 				0A10A9361C90A62E0009CC8D /* TaskAddViewController.swift */,
 				0A10A9381C90A66F0009CC8D /* TaskDetailsViewController.swift */,
 			);
@@ -365,6 +365,7 @@
 				TargetAttributes = {
 					0A10A8E31C9014090009CC8D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = F88WJ6Y5PH;
 					};
 					0A10A8F71C90140A0009CC8D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -439,6 +440,7 @@
 				0AD48F861C96A0B60092F8D7 /* TaskAdministration.swift in Sources */,
 				0AD48F8C1C96A0E00092F8D7 /* SchoolEvent.swift in Sources */,
 				0AA0B90A1C936975001047B0 /* Account.swift in Sources */,
+				0AD48F961C98134F0092F8D7 /* TaskController.swift in Sources */,
 				0A10A9371C90A62E0009CC8D /* TaskAddViewController.swift in Sources */,
 				0AD48F901C96A0F10092F8D7 /* NormalEvent.swift in Sources */,
 				0A10A93B1C90BCC80009CC8D /* Task.swift in Sources */,
@@ -454,7 +456,6 @@
 				0AD48F941C96D6860092F8D7 /* NoteDetailViewController.swift in Sources */,
 				0A10A91B1C901BED0009CC8D /* AlarmController.swift in Sources */,
 				0A10A8E81C9014090009CC8D /* AppDelegate.swift in Sources */,
-				0A10A9351C90A5B20009CC8D /* TaskTableViewController.swift in Sources */,
 				0AD48F881C96A0C40092F8D7 /* Administration.swift in Sources */,
 				0A10A9161C901A770009CC8D /* AgendaController.swift in Sources */,
 				0AA0B90D1C936A7D001047B0 /* Alarm.swift in Sources */,
@@ -597,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "IOS Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KV-DXD.IOS-Planner";
@@ -608,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "IOS Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KV-DXD.IOS-Planner";

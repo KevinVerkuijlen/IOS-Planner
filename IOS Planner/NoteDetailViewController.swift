@@ -12,6 +12,7 @@ class NoteDetailViewController: UIViewController {
 
     var note: Note?
     
+    @IBOutlet var NoteInformationTextView: UITextView!
     @IBOutlet var NoteDetailTextView: UITextView!
     
     override func viewDidLoad() {
@@ -25,7 +26,36 @@ class NoteDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func DeleteNoteButton(sender: AnyObject) {
+        if(note != nil){
+            self.performSegueWithIdentifier("RemoveDetailToNote", sender:self)
+        }
+    }
 
+    @IBAction func ChangeNoteButton(sender: AnyObject) {
+        if(NoteInformationTextView.text != nil)
+        {
+            self.performSegueWithIdentifier("ChangeDetailToNote", sender:self)
+        }
+
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(NoteInformationTextView.text != nil)
+        {
+            let newNote = Note(information: NoteInformationTextView.text)
+            if segue.identifier == "ChangeDetailToNote" {
+                if let destination = segue.destinationViewController as? NoteController {
+                    destination.noteAdministration.ChangeNote(note!, newnote: newNote)
+                }
+            }
+            if segue.identifier == "RemoveDetailToNote" {
+                if let destination = segue.destinationViewController as? NoteController {
+                    destination.noteAdministration.RemoveNote(note!)
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

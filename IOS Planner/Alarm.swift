@@ -9,18 +9,20 @@
 import Foundation
 
 class Alarm {
-    let alarmTime: NSData
-    let accountEmail: String
+    var alarmTime: NSData
+    var accountEmail: String?
+    
+    init(Time: NSData){
+        self.alarmTime = Time
+        
+    }
     
     init(Time: NSData, AccountEmail: String){
         self.alarmTime = Time
         self.accountEmail = AccountEmail
         
     }
-    
-    convenience init(Time: NSData){
-        self.init(Time:Time)
-    }
+
 
     
 }

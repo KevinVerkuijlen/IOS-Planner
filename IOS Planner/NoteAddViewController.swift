@@ -9,9 +9,9 @@
 import UIKit
 
 class NoteAddViewController: UIViewController {
+    var newNote = Note(information: "")
 
     @IBOutlet var NoteInformationTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,19 @@ class NoteAddViewController: UIViewController {
     @IBAction func NoteAddButton(sender: AnyObject) {
         if(NoteInformationTextView.text != nil)
         {
-            let newNote = Note(information: NoteInformationTextView.text)
-            let noteAdministration = NoteAdministration()
-            noteAdministration.Notes.append(newNote)
-            print(noteAdministration.Notes.count)
             self.performSegueWithIdentifier("NewNoteToNote", sender:self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(NoteInformationTextView.text != nil)
+        {
+             newNote = Note(information: NoteInformationTextView.text)
+        if segue.identifier == "NewNoteToNote" {
+            if let destination = segue.destinationViewController as? NoteController {
+                destination.noteAdministration.AddNote(newNote)
+                }
+            }
         }
     }
 

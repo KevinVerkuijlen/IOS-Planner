@@ -9,7 +9,7 @@
 import Foundation
 
 class Note {
-    var information: String?
+    var information: String!
     var accountEmail: String?
     
     init(information: String){
