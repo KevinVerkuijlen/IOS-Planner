@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -32,6 +33,9 @@
                                     <constraint firstAttribute="width" constant="69" id="deW-7T-YIZ"/>
                                 </constraints>
                                 <state key="normal" title="Notes" image="edit-notes.png"/>
+                                <connections>
+                                    <segue destination="9Wf-Pj-RN0" kind="modal" id="ath-PK-Aka"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-fl-Bks">
                                 <rect key="frame" x="229" y="256" width="68" height="58"/>
@@ -41,7 +45,7 @@
                                 </constraints>
                                 <state key="normal" title="To Do List" image="Todo-Checklist.png"/>
                                 <connections>
-                                    <segue destination="DTt-ip-O6g" kind="modal" id="fxh-3U-Olc"/>
+                                    <segue destination="GnZ-7q-dUv" kind="modal" id="YvW-35-aqP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-c9-927">
@@ -83,46 +87,6 @@
             </objects>
             <point key="canvasLocation" x="233" y="308"/>
         </scene>
-        <!--To Do list-->
-        <scene sceneID="BX8-2C-lJ2">
-            <objects>
-                <tableViewController title="To Do list" id="Vh8-CI-CHZ" customClass="TaskTableViewController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ujh-eY-QdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="4RI-dY-btV">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RI-dY-btV" id="zgj-o9-Ru3">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="oAi-vG-I2e" kind="push" id="ECR-qA-uBC"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Vh8-CI-CHZ" id="eSe-yO-HPA"/>
-                            <outlet property="delegate" destination="Vh8-CI-CHZ" id="ecS-WP-P4M"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="04k-b8-orV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="M6a-bj-rKe">
-                            <connections>
-                                <segue destination="rr1-bx-hrW" kind="push" id="0gU-ms-ylv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2pD-Ak-hAP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1189" y="734"/>
-        </scene>
         <!--TaskDetailsController-->
         <scene sceneID="wOG-J1-K0o">
             <objects>
@@ -147,28 +111,72 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxg-W1-RFu">
-                                <rect key="frame" x="20" y="168" width="90" height="21"/>
+                                <rect key="frame" x="20" y="206" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add your notes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XGM-0X-UJh">
-                                <rect key="frame" x="20" y="197" width="280" height="193"/>
+                                <rect key="frame" x="20" y="235" width="280" height="193"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-D2-Y6y">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="VbQ-4d-Gyt">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uBR-u2-1Rt">
+                                            <connections>
+                                                <segue destination="GnZ-7q-dUv" kind="modal" id="qyp-pb-SWV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="done" id="dgh-an-Mgx">
+                                                <connections>
+                                                    <action selector="TaskChangeButton:" destination="oAi-vG-I2e" id="6Xj-kS-ekV"/>
+                                                    <segue destination="GnZ-7q-dUv" kind="modal" identifier="ChangeDetailToTask" id="ksV-OY-uww"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="trash" id="0ML-cd-SCj">
+                                                <connections>
+                                                    <action selector="TaskRemoveButton:" destination="oAi-vG-I2e" id="jsm-hS-V5D"/>
+                                                    <segue destination="GnZ-7q-dUv" kind="modal" identifier="RemoveDetailToTask" id="QY7-Iu-53u"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRJ-E8-619">
+                                <rect key="frame" x="251" y="160" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-6U-pYa">
+                                <rect key="frame" x="20" y="165" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="UWk-S2-Sjc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="yOI-NP-SRD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="yOI-NP-SRD">
+                            <connections>
+                                <action selector="taskDeleteButton:" destination="oAi-vG-I2e" id="S3V-k5-rpT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="TaskCompletedSwitch" destination="QRJ-E8-619" id="gvc-sc-HMd"/>
+                        <outlet property="taskDetailsNotes" destination="XGM-0X-UJh" id="9Ze-AI-X2z"/>
+                        <outlet property="taskDetailsTitel" destination="Aek-e1-Bep" id="jnt-vc-mGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFZ-3Z-dZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="1179"/>
+            <point key="canvasLocation" x="1196" y="1177"/>
         </scene>
         <!--TaskAddController-->
         <scene sceneID="c4y-70-tYH">
@@ -204,18 +212,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vk0-ef-vKz">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="cBS-YM-9EZ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UJk-w3-JEB">
+                                            <connections>
+                                                <segue destination="GnZ-7q-dUv" kind="modal" id="Mtr-Xw-9su"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dVC-cV-unA">
+                                            <connections>
+                                                <segue destination="GnZ-7q-dUv" kind="modal" identifier="NewTaskToTask" id="KpC-9g-LeL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qiO-sx-TQ2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XT6-Ey-uKl"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oWt-4D-f9X"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XT6-Ey-uKl">
+                            <connections>
+                                <action selector="addTaskButton:" destination="rr1-bx-hrW" id="ZFg-jK-1kd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="TaskAddNotesText" destination="Zdl-41-790" id="zRe-Rw-v30"/>
+                        <outlet property="TaskAddTitelText" destination="Yz6-yC-M8q" id="2cV-U9-1LQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qC-Ww-XJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="546"/>
+            <point key="canvasLocation" x="1209" y="517"/>
         </scene>
         <!--Account-->
         <scene sceneID="fVU-du-lcd">
@@ -269,6 +303,184 @@
             </objects>
             <point key="canvasLocation" x="772" y="49"/>
         </scene>
+        <!--To Do List-->
+        <scene sceneID="fHm-uj-Kjg">
+            <objects>
+                <viewController title="To Do List" id="GnZ-7q-dUv" customClass="TaskController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="umv-yn-Qcj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zpi-HK-HaH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g0X-ER-zav">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zR-nd-EDX">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="wmG-8L-224">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="wvP-25-5Ye">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FoD-nY-1MV">
+                                                <rect key="frame" x="16" y="2" width="55" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="MB__home.png"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="modal" id="bh8-Pc-WIc"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fa5-uR-bD6">
+                                            <connections>
+                                                <segue destination="rr1-bx-hrW" kind="modal" id="q00-i9-oPZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zsf-ZC-WP2">
+                                <rect key="frame" x="0.0" y="64" width="320" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="L7x-Me-jib">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L7x-Me-jib" id="r0L-Iw-ehD">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oAi-vG-I2e" kind="modal" identifier="TaskToDeteail" id="Jcb-BE-Bsz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GnZ-7q-dUv" id="NEb-ia-0Vw"/>
+                                    <outlet property="delegate" destination="GnZ-7q-dUv" id="OEG-ul-6Wx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableview" destination="zsf-ZC-WP2" id="SO3-Lu-Zh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8G7-fi-E3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="754"/>
+        </scene>
+        <!--AddNote-->
+        <scene sceneID="0Jj-bn-bfi">
+            <objects>
+                <viewController title="AddNote" id="T2q-7h-eUD" customClass="NoteAddViewController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vt4-P5-B3b"/>
+                        <viewControllerLayoutGuide type="bottom" id="WNt-Dn-Z6Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a5k-8P-3Xh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wri-YX-fJi">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Note" id="QFb-mm-Pes">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="F8Z-Aw-zKC">
+                                            <connections>
+                                                <segue destination="9Wf-Pj-RN0" kind="modal" id="Xt2-YV-BGF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gfg-u4-qIZ">
+                                            <connections>
+                                                <action selector="NoteAddButton:" destination="T2q-7h-eUD" id="OIB-EB-r71"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="NoteTextView" text="Add your note here...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ljB-ln-qbq">
+                                <rect key="frame" x="0.0" y="77" width="320" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="NoteInformationTextView" destination="ljB-ln-qbq" id="yrr-Gc-k8V"/>
+                        <segue destination="9Wf-Pj-RN0" kind="modal" identifier="NewNoteToNote" id="ttH-xv-DsK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOV-Hs-vnt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1043" y="-667"/>
+        </scene>
+        <!--NoteDetailsViewController-->
+        <scene sceneID="5HZ-MV-cyw">
+            <objects>
+                <viewController title="NoteDetailsViewController" id="Xf9-IG-o34" customClass="NoteDetailViewController" customModule="IOS_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FxT-JB-V2L"/>
+                        <viewControllerLayoutGuide type="bottom" id="pdY-bj-jy6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vtM-dl-ptE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-NO-3Qp">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="0ax-Ie-aro">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uQA-lP-l5N">
+                                            <connections>
+                                                <segue destination="9Wf-Pj-RN0" kind="modal" identifier="CancelToNote" id="CCH-1A-FWx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="done" id="UbV-Vz-27V">
+                                                <connections>
+                                                    <action selector="ChangeNoteButton:" destination="Xf9-IG-o34" id="7rH-jG-0WJ"/>
+                                                    <segue destination="9Wf-Pj-RN0" kind="modal" identifier="ChangeDetailToNote" id="fYR-au-NaT"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="trash" id="3Cu-52-CRo">
+                                                <connections>
+                                                    <action selector="DeleteNoteButton:" destination="Xf9-IG-o34" id="G5v-XK-OhK"/>
+                                                    <segue destination="9Wf-Pj-RN0" kind="modal" identifier="RemoveDetailToNote" id="Tm9-nn-rbP"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="your note information...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-VC-nyU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="77b-Mi-Xc8"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="NoteDetailTextView" destination="hKe-VC-nyU" id="MuP-9w-fJR"/>
+                        <outlet property="NoteInformationTextView" destination="hKe-VC-nyU" id="fHV-EV-PPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMb-Ri-hlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1043" y="-17"/>
+        </scene>
         <!--Notes-->
         <scene sceneID="C8E-g6-Gma">
             <objects>
@@ -281,19 +493,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gol-Cb-tId">
-                                <rect key="frame" x="20" y="20" width="55" height="39"/>
-                                <state key="normal" title="Button" image="MB__home.png"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pet-cN-AvW">
+                                <rect key="frame" x="0.0" y="106" width="320" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoteCell" id="NH3-FH-r6J">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NH3-FH-r6J" id="Kjd-iN-tAV">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Xf9-IG-o34" kind="modal" identifier="NoteToDetail" id="xPo-lb-314"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Wf-Pj-RN0" id="gvl-Ij-yEc"/>
+                                    <outlet property="delegate" destination="9Wf-Pj-RN0" id="N5O-Ud-V0r"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Do-TM-sA9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="7gc-q0-VzK">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Xkp-Zc-skQ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gol-Cb-tId">
+                                                <rect key="frame" x="16" y="2" width="55" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="MB__home.png"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="modal" id="Of1-IW-mFj"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Eg-3p-d0w">
+                                            <connections>
+                                                <segue destination="T2q-7h-eUD" kind="modal" id="uq2-nm-QE5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="HdQ-1n-82q"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableview" destination="Pet-cN-AvW" id="Z9A-B2-DGg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s8-4U-AXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="-122"/>
+            <point key="canvasLocation" x="-535" y="-386"/>
         </scene>
         <!--Agenda-->
         <scene sceneID="iHF-tT-Xae">
@@ -321,26 +578,6 @@
             </objects>
             <point key="canvasLocation" x="-194" y="844"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="I9n-BB-HoY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DTt-ip-O6g" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vcr-nr-qWS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Vh8-CI-CHZ" kind="relationship" relationship="rootViewController" id="J1g-GX-xvi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKL-6k-djZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="733" y="734"/>
-        </scene>
     </scenes>
     <resources>
         <image name="MB__home.png" width="128" height="128"/>
@@ -350,4 +587,9 @@
         <image name="edit-notes.png" width="256" height="256"/>
         <image name="patient_cards-512.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QY7-Iu-53u"/>
+        <segue reference="bh8-Pc-WIc"/>
+        <segue reference="ath-PK-Aka"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -37,6 +37,9 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell", forIndexPath: indexPath)
         cell.textLabel?.text = taskAdministration.ToDo[indexPath.item].titel
+        if(taskAdministration.ToDo[indexPath.item].completed == true){
+       cell.textLabel?.textColor = UIColor.greenColor()
+        }
         return cell
     }
     
