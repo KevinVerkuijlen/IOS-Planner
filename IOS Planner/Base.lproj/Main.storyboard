@@ -63,6 +63,9 @@
                                     <constraint firstAttribute="height" constant="59" id="lVi-ro-PmF"/>
                                 </constraints>
                                 <state key="normal" title="Account" image="patient_cards-512.png"/>
+                                <connections>
+                                    <segue destination="Md1-PE-Nfa" kind="modal" id="WIM-99-gdo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -127,20 +130,19 @@
                                     <navigationItem title="Title" id="VbQ-4d-Gyt">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uBR-u2-1Rt">
                                             <connections>
-                                                <segue destination="GnZ-7q-dUv" kind="modal" id="qyp-pb-SWV"/>
+                                                <action selector="CancelDetailTaskButton:" destination="oAi-vG-I2e" id="aV9-3h-HTS"/>
+                                                <segue destination="GnZ-7q-dUv" kind="modal" identifier="CancelDetailTask" id="qyp-pb-SWV"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem systemItem="done" id="dgh-an-Mgx">
                                                 <connections>
                                                     <action selector="TaskChangeButton:" destination="oAi-vG-I2e" id="6Xj-kS-ekV"/>
-                                                    <segue destination="GnZ-7q-dUv" kind="modal" identifier="ChangeDetailToTask" id="ksV-OY-uww"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem systemItem="trash" id="0ML-cd-SCj">
                                                 <connections>
                                                     <action selector="TaskRemoveButton:" destination="oAi-vG-I2e" id="jsm-hS-V5D"/>
-                                                    <segue destination="GnZ-7q-dUv" kind="modal" identifier="RemoveDetailToTask" id="QY7-Iu-53u"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -172,6 +174,8 @@
                         <outlet property="TaskCompletedSwitch" destination="QRJ-E8-619" id="gvc-sc-HMd"/>
                         <outlet property="taskDetailsNotes" destination="XGM-0X-UJh" id="9Ze-AI-X2z"/>
                         <outlet property="taskDetailsTitel" destination="Aek-e1-Bep" id="jnt-vc-mGC"/>
+                        <segue destination="GnZ-7q-dUv" kind="modal" identifier="ChangeDetailToTask" id="wcQ-6N-Z6F"/>
+                        <segue destination="GnZ-7q-dUv" kind="modal" identifier="RemoveDetailToTask" id="PHs-Y4-ZFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFZ-3Z-dZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,12 +222,13 @@
                                     <navigationItem title="Title" id="cBS-YM-9EZ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UJk-w3-JEB">
                                             <connections>
-                                                <segue destination="GnZ-7q-dUv" kind="modal" id="Mtr-Xw-9su"/>
+                                                <action selector="CancelAddTaskButton:" destination="rr1-bx-hrW" id="IIz-r1-76P"/>
+                                                <segue destination="GnZ-7q-dUv" kind="modal" identifier="CancelAddTask" id="Mtr-Xw-9su"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="dVC-cV-unA">
                                             <connections>
-                                                <segue destination="GnZ-7q-dUv" kind="modal" identifier="NewTaskToTask" id="KpC-9g-LeL"/>
+                                                <action selector="addTaskButton:" destination="rr1-bx-hrW" id="GuQ-rl-hgp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -245,6 +250,7 @@
                     <connections>
                         <outlet property="TaskAddNotesText" destination="Zdl-41-790" id="zRe-Rw-v30"/>
                         <outlet property="TaskAddTitelText" destination="Yz6-yC-M8q" id="2cV-U9-1LQ"/>
+                        <segue destination="GnZ-7q-dUv" kind="modal" identifier="NewTaskToTask" id="jCg-Hi-Gv4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qC-Ww-XJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,9 +269,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIZ-Lv-7H9">
-                                <rect key="frame" x="20" y="20" width="57" height="40"/>
-                                <state key="normal" title="Button" image="MB__home.png"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="381-Lq-eW9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="smp-8Z-VKW">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="LQt-Fz-dvj">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YIZ-Lv-7H9">
+                                                <rect key="frame" x="16" y="2" width="57" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="MB__home.png"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="modal" id="d58-9w-HBg"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D6T-2g-6OI">
+                                <rect key="frame" x="53" y="117" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYt-IV-Z0Z">
+                                <rect key="frame" x="53" y="180" width="214" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCR-kV-aG6">
+                                <rect key="frame" x="132" y="218" width="42" height="30"/>
+                                <state key="normal" title="Log in"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RR-hJ-AQA">
+                                <rect key="frame" x="109" y="88" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-7u-LTk">
+                                <rect key="frame" x="116" y="155" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="if you don't have an account yet you can register yourself here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i50-4C-Cmm">
+                                <rect key="frame" x="40" y="340" width="240" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-Xz-iCt">
+                                <rect key="frame" x="134" y="391" width="53" height="30"/>
+                                <state key="normal" title="register"/>
+                                <connections>
+                                    <segue destination="aWP-6g-hHs" kind="modal" id="Tl3-A7-eYM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,7 +333,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ca-tr-GJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="-705"/>
+            <point key="canvasLocation" x="225" y="-503"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="vps-Qv-dlC">
+            <objects>
+                <viewController title="Register" id="aWP-6g-hHs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8UZ-IR-12q"/>
+                        <viewControllerLayoutGuide type="bottom" id="lQE-gb-d8K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a3x-bl-cnt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eko-0Y-9Zu">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="964-pg-Mhe">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="u7g-kE-eGP">
+                                            <connections>
+                                                <segue destination="Md1-PE-Nfa" kind="modal" id="Kpr-f1-Xb7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8n-6o-QA6">
+                                <rect key="frame" x="25" y="132" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-Dc-Cmw">
+                                <rect key="frame" x="25" y="175" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z97-IH-jGb">
+                                <rect key="frame" x="25" y="221" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRd-p0-U0D">
+                                <rect key="frame" x="25" y="263" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PYx-pq-zDI">
+                                <rect key="frame" x="116" y="132" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rV5-i8-gqJ">
+                                <rect key="frame" x="116" y="175" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-qN-s37">
+                                <rect key="frame" x="116" y="218" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-2N-67A">
+                                <rect key="frame" x="116" y="263" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZX-g6-l0c">
+                                <rect key="frame" x="86" y="318" width="149" height="30"/>
+                                <state key="normal" title="Complete registration"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aa5-ej-qdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="-1252"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="HvH-hO-hxN">
@@ -331,7 +471,8 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fa5-uR-bD6">
                                             <connections>
-                                                <segue destination="rr1-bx-hrW" kind="modal" id="q00-i9-oPZ"/>
+                                                <action selector="TaskToNewButton:" destination="GnZ-7q-dUv" id="3kT-5w-NtU"/>
+                                                <segue destination="rr1-bx-hrW" kind="modal" identifier="TaskToNew" id="Ffg-8M-uwp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -389,7 +530,7 @@
                                     <navigationItem title="Note" id="QFb-mm-Pes">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="F8Z-Aw-zKC">
                                             <connections>
-                                                <segue destination="9Wf-Pj-RN0" kind="modal" id="Xt2-YV-BGF"/>
+                                                <segue destination="9Wf-Pj-RN0" kind="modal" identifier="CancelAddNote" id="Xt2-YV-BGF"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gfg-u4-qIZ">
@@ -438,6 +579,7 @@
                                     <navigationItem title="Title" id="0ax-Ie-aro">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uQA-lP-l5N">
                                             <connections>
+                                                <action selector="CancelDetailNoteButton:" destination="Xf9-IG-o34" id="xZe-qn-z4Y"/>
                                                 <segue destination="9Wf-Pj-RN0" kind="modal" identifier="CancelToNote" id="CCH-1A-FWx"/>
                                             </connections>
                                         </barButtonItem>
@@ -445,13 +587,11 @@
                                             <barButtonItem systemItem="done" id="UbV-Vz-27V">
                                                 <connections>
                                                     <action selector="ChangeNoteButton:" destination="Xf9-IG-o34" id="7rH-jG-0WJ"/>
-                                                    <segue destination="9Wf-Pj-RN0" kind="modal" identifier="ChangeDetailToNote" id="fYR-au-NaT"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem systemItem="trash" id="3Cu-52-CRo">
                                                 <connections>
                                                     <action selector="DeleteNoteButton:" destination="Xf9-IG-o34" id="G5v-XK-OhK"/>
-                                                    <segue destination="9Wf-Pj-RN0" kind="modal" identifier="RemoveDetailToNote" id="Tm9-nn-rbP"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -475,6 +615,8 @@
                     <connections>
                         <outlet property="NoteDetailTextView" destination="hKe-VC-nyU" id="MuP-9w-fJR"/>
                         <outlet property="NoteInformationTextView" destination="hKe-VC-nyU" id="fHV-EV-PPi"/>
+                        <segue destination="9Wf-Pj-RN0" kind="modal" identifier="RemoveDetailToNote" id="5m8-sH-bO3"/>
+                        <segue destination="9Wf-Pj-RN0" kind="modal" identifier="ChangeDetailToNote" id="uhW-id-0b5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMb-Ri-hlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,8 +635,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Do-TM-sA9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="7gc-q0-VzK">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Xkp-Zc-skQ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gol-Cb-tId">
+                                                <rect key="frame" x="16" y="2" width="55" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="MB__home.png"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="modal" id="Of1-IW-mFj"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Eg-3p-d0w">
+                                            <connections>
+                                                <action selector="NoteToNewButton:" destination="9Wf-Pj-RN0" id="Tld-0f-nGM"/>
+                                                <segue destination="T2q-7h-eUD" kind="modal" identifier="NoteToNew" id="uq2-nm-QE5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pet-cN-AvW">
-                                <rect key="frame" x="0.0" y="106" width="320" height="462"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoteCell" id="NH3-FH-r6J">
@@ -514,28 +679,6 @@
                                     <outlet property="delegate" destination="9Wf-Pj-RN0" id="N5O-Ud-V0r"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Do-TM-sA9">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="7gc-q0-VzK">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Xkp-Zc-skQ">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gol-Cb-tId">
-                                                <rect key="frame" x="16" y="2" width="55" height="39"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="MB__home.png"/>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="modal" id="Of1-IW-mFj"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Eg-3p-d0w">
-                                            <connections>
-                                                <segue destination="T2q-7h-eUD" kind="modal" id="uq2-nm-QE5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -588,8 +731,9 @@
         <image name="patient_cards-512.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QY7-Iu-53u"/>
-        <segue reference="bh8-Pc-WIc"/>
-        <segue reference="ath-PK-Aka"/>
+        <segue reference="ttH-xv-DsK"/>
+        <segue reference="Of1-IW-mFj"/>
+        <segue reference="wcQ-6N-Z6F"/>
+        <segue reference="Kpr-f1-Xb7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,11 +41,22 @@ class NoteController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    @IBAction func NoteToNewButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("NoteToNew", sender: self)
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "NoteToDetail" {
             if let destination = segue.destinationViewController as? NoteDetailViewController {
                  let Index = self.tableview.indexPathForSelectedRow!.row
                     destination.note = noteAdministration.Notes[Index]
+                    destination.noteAdministration = self.noteAdministration
+            }
+        }
+        if segue.identifier == "NoteToNew" {
+            if let destination = segue.destinationViewController as? NoteAddViewController {
+                destination.noteAdministration = self.noteAdministration
             }
         }
     }

@@ -9,13 +9,13 @@
 import UIKit
 
 class NoteAddViewController: UIViewController {
-    var newNote = Note(information: "")
+    var newNote = Note(information: "", accountemail: "")
+    var noteAdministration: NoteAdministration?
 
     @IBOutlet var NoteInformationTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -27,18 +27,66 @@ class NoteAddViewController: UIViewController {
     @IBAction func NoteAddButton(sender: AnyObject) {
         if(NoteInformationTextView.text != nil)
         {
-            self.performSegueWithIdentifier("NewNoteToNote", sender:self)
+            newNote = Note(information: NoteInformationTextView.text, accountemail: "")
+            var check = 0
+            do{
+                check = try noteAdministration!.CheckForNote(newNote)
+            }
+            catch NoteErrors.NoNoteValues{
+                errorMessage("This note doesn't contain anything")
+                return
+            }
+            catch{
+                errorMessage("Something went wrong")
+                return
+            }
+            if(check == -1){
+                performSegueWithIdentifier("NewNoteToNote", sender:self)
+            }
+            else{
+                errorMessage("This note already exist")
+            }
         }
+    }
+    
+    @IBAction func CancelAddNoteButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("CancelAddNote", sender: self)
+    }
+    
+    
+    
+    func errorMessage(error: String){
+        let alertController = UIAlertController(title: "Error", message:
+            error, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(NoteInformationTextView.text != nil)
         {
-             newNote = Note(information: NoteInformationTextView.text)
+            
         if segue.identifier == "NewNoteToNote" {
             if let destination = segue.destinationViewController as? NoteController {
-                destination.noteAdministration.AddNote(newNote)
+                do{
+                    try noteAdministration!.AddNote(newNote)
                 }
+                catch NoteErrors.NoteAlreadyExist{
+                    errorMessage("This note already exist")
+                    return
+                }
+                catch{
+                    errorMessage("Something went wrong")
+                    return
+                }
+                destination.noteAdministration = self.noteAdministration!
+                }
+            }
+        }
+        if segue.identifier == "CancelAddNote" {
+            if let destination = segue.destinationViewController as? NoteController{
+                destination.noteAdministration = self.noteAdministration!
             }
         }
     }

@@ -12,34 +12,80 @@ class NoteAdministration{
     
     var Notes = [Note]()
     
-    init(){
-        AddNote(Note(information: "When I was testing this, at this point, everything worked fine at this point, but I noticed that I couldn’t see the disclosure indicators.  Turns out it was an issue with Auto Layout and Size classes that I just forgot to deal with earlier.  You can see the disclosure indicator just fine in the editor, but notice that the box is much wider than a normal iPhone interface?  So if you aren’t seeing the disclosure indicators, they probably are THERE, but they’re farther to the right than your screen is showing.  I just simply selected the UITableView from the Document Outline, and Pinned all of its sides (top, bottom, left and right) to 0 with “Constrain to margins” off."))
-        AddNote(Note(information: "0 with “Constrain to margins” off."))
-    }
-    
-    func AddNote(note : Note)
+    func AddNote(note : Note)throws
     {
-        if(note.information != ""){
-            //add loop to check not exact the same
-            self.Notes.append((note))
+        var check =  0
+        do{
+            check = try CheckForNote(note)
         }
+        catch NoteErrors.NoNoteValues{
+            NoteErrors.NoNoteValues
+        }
+        guard check == -1 else{
+            throw NoteErrors.NoteAlreadyExist
+        }
+        self.Notes.append((note))
     }
     
-    func RemoveNote(note : Note)
-    {
-        let indexofNote = self.Notes.indexOf({$0.information == note.information})
-        Notes.removeAtIndex(indexofNote!)
+    func RemoveNote(note : Note) throws{
+        var check =  -1
+        do{
+            check = try CheckForNote(note)
+        }
+        catch NoteErrors.NoNoteValues{
+            NoteErrors.NoNoteValues
+        }
+        guard (check >= 0) else{
+            throw NoteErrors.NoteDoesntExist
+        }
+        Notes.removeAtIndex(check)
     }
     
-    func ChangeNote(oldnote: Note, newnote : Note)
-    {
-        let indexofNote = self.Notes.indexOf({$0.information == oldnote.information})
-        Notes.removeAtIndex(indexofNote!)
-        Notes.insert(newnote, atIndex: indexofNote!)
+    func ChangeNote(oldNote: Note, newNote : Note)
+    throws {
+        let oldCheck: Int
+        do{ oldCheck = try CheckForNote(oldNote)}
+        catch NoteErrors.NoNoteValues{
+            throw NoteErrors.NoNoteValues
+        }
+        
+        let newCheck: Int
+        do{ newCheck = try CheckForNote(newNote)}
+        catch NoteErrors.NoNoteValues{
+            throw NoteErrors.NoNoteValues
+        }
+        guard (oldCheck >= 0) else{
+            throw NoteErrors.NoteDoesntExist
+        }
+        guard newCheck == -1 else{
+            throw NoteErrors.NoteAlreadyExist
+        }
+        
+        if(oldCheck >= 0 && newCheck == -1)
+        {
+        Notes.removeAtIndex(oldCheck)
+        Notes.insert(newNote, atIndex: oldCheck)
+        }
+        else{
+            return
+        }
     }
     
     func LinkNote()
     {
         
+    }
+    
+    func CheckForNote(note: Note) throws -> Int{
+        guard (note.information != "") else{
+            throw NoteErrors.NoNoteValues
+        }
+       let indexofNote = self.Notes.indexOf({$0.information == note.information})
+        if(indexofNote != nil){
+            return indexofNote!
+        }
+        else{
+            return -1
+        }
     }
 }

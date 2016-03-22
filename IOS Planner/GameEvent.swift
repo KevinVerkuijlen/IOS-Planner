@@ -11,11 +11,6 @@ import Foundation
 class GameEvent : CalendarEvent{
     var gameName: String
     
-    init(Titel: String, Notes: String, StartDate: NSData, EndDate: NSData, GameName: String) {
-        self.gameName = GameName
-        super.init(Titel: Titel, Notes: Notes, StartDate: StartDate, EndDate: EndDate)
-    }
-    
     init(Titel: String, Notes: String, StartDate: NSData, EndDate: NSData, GameName: String, AccountEmail: String) {
         self.gameName = GameName
         super.init(Titel: Titel, Notes: Notes, StartDate: StartDate, EndDate: EndDate, AccountEmail: AccountEmail)

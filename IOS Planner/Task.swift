@@ -13,12 +13,6 @@ class Task {
     var notes: String!
     var completed: Bool!
     var accountEmail: String?
-
-    init(Titel: String, Notes: String, Completed: Bool = false){
-        self.titel = Titel
-        self.notes = Notes
-        self.completed = Completed        
-    }
     
     init(Titel: String, Notes: String, Completed: Bool = false, AccountEmail: String){
         self.titel = Titel

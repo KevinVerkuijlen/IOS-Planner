@@ -12,10 +12,6 @@ class Alarm {
     var alarmTime: NSData
     var accountEmail: String?
     
-    init(Time: NSData){
-        self.alarmTime = Time
-        
-    }
     
     init(Time: NSData, AccountEmail: String){
         self.alarmTime = Time

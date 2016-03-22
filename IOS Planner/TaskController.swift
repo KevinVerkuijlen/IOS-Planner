@@ -13,10 +13,9 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableview: UITableView!
     
     var taskAdministration = TaskAdministration()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -43,11 +42,21 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    @IBAction func TaskToNewButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("TaskToNew", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "TaskToDeteail" {
             if let destination = segue.destinationViewController as? TaskDetailsViewController {
                 let Index = self.tableview.indexPathForSelectedRow!.row
                 destination.task = taskAdministration.ToDo[Index]
+                destination.taskAdministration = self.taskAdministration
+            }
+        }
+         if segue.identifier == "TaskToNew" {
+            if let destination = segue.destinationViewController as? TaskAddViewController {
+                destination.taskAdministration = self.taskAdministration
             }
         }
     }

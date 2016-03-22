@@ -12,10 +12,6 @@ class Note {
     var information: String!
     var accountEmail: String?
     
-    init(information: String){
-        self.information = information
-    }
-    
     init(information: String, accountemail:String){
         self.information = information
         self.accountEmail = accountemail
